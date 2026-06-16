@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tiffanie Perea | Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --forest:   #2d4a2d;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f9f6f1;
+      color: #2c2c2c;
+      margin: 0;
+    }
+
+    .site-navbar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 10;
+      padding: 18px 40px;
+      display: fixed;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(6px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
+    }
+
+    .navbar-logo {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    .navbar-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar-links a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.9;
+      transition: opacity 0.2s;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 420px;
+      background-image: url('others/bg.png');
+      background-size: cover;
+      background-position: center top;
+      display: flex;
+      align-items: flex-end;
+      padding-bottom: 48px;
+      color: #fff;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.15) 60%, rgba(0,0,0,0.35) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 0 40px;
+    }
+
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+      text-decoration: underline;
+      text-underline-offset: 8px;
+      text-decoration-color: rgba(255,255,255,0.8);
+      margin-bottom: 0;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 600;
+      color: var(--forest);
+      text-align: center;
+      margin-bottom: 36px;
+      position: relative;
+    }
+
+    .profile-section {
+      background: #fff;
+      padding: 56px 0;
+    }
+
+    .profile-card {
+      text-align: left;
+      padding: 28px 28px;
+      background: var(--forest);
+      border-radius: 8px;
+      height: 100%;
+    }
+
+    .profile-card h5 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      color: #ffffff;
+      margin-bottom: 16px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .profile-table {
+      width: 100%;
+      font-size: 0.95rem;
+      color: #ffffff;
+      line-height: 1.9;
+      border: none;
+    }
+
+    .profile-table td {
+      padding: 2px 0;
+      vertical-align: top;
+      color: #ffffff;
+      border: none;
+    }
+
+    .profile-table td.label {
+      font-weight: 400;
+      white-space: nowrap;
+      padding-right: 8px;
+    }
+
+    .profile-table a {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .projects-section {
+      background: var(--forest);
+      padding: 56px 0;
+    }
+
+    .projects-section .section-title {
+      color: #fff;
+    }
+
+    .project-card {
+      overflow: hidden;
+      transition: transform 0.25s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      border-radius: 12px;
+    }
+
+    .project-card .card-body {
+      padding: 14px 16px;
+      text-align: center;
+    }
+
+    .project-card .card-title {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #fff;
+      margin: 0;
+      letter-spacing: 0.3px;
+    }
+
+    .tech-stack-row {
+      margin-top: 32px;
+      text-align: center;
+    }
+
+    .tech-tags-box {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .tech-tag {
+      color: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      padding: 6px 18px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 20px;
+    }
+
+    .hobbies-section {
+      background: #ffffff;
+      padding: 56px 0;
+    }
+
+    .hobby-card {
+      text-align: center;
+    }
+
+    .hobby-img-wrap {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 0 auto 12px;
+      border: 3px solid var(--sage);
+    }
+
+    .hobby-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .hobby-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #000000;
+      margin: 0;
+    }
+
+    footer {
+      background: var(--forest);
+      color: rgba(255,255,255,0.5);
+      text-align: center;
+      padding: 20px;
+      font-size: 0.8rem;
+    }
+
+    .hero-bio-strip {
+      background: #fff;
+      text-align: center;
+      padding: 28px 24px;
+      border-bottom: 1px solid #eee;
+    }
+    .hero-bio-strip p {
+      font-size: 0.95rem;
+      font-weight: 400;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 576px) {
+      .hero { min-height: 300px; }
+      .hero-name { font-size: 2rem; }
+      .site-navbar { padding: 14px 20px; }
+      .navbar-links { gap: 16px; }
+      .navbar-links a { font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="site-navbar">
+    <img src="others/logo.png" alt="CT Logo" class="navbar-logo"/>
+    <ul class="navbar-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#project">Project</a></li>
+      <li><a href="#hobbies">Hobbies</a></li>
+    </ul>
+  </nav>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h1 class="hero-name">Hello, I'm Tiffanie!</h1>
+    </div>
+  </section>
+
+  <div class="hero-bio-strip">
+    <p>Hi! I'm Tiffanie, a 2nd Year Bachelor of Science in Information Technology student.<br/>
+    I am interested in web development, UI/UX design, and database management.</p>
+  </div>
+
+  <section class="profile-section" id="about">
+    <div class="container">
+      <div class="row justify-content-center">
+
+        <div class="col-12 col-md-5 mb-4">
+          <div class="profile-card">
+            <h5>My Profile:</h5>
+            <table class="profile-table">
+              <tr><td class="label">Name:</td><td>Cyril Tiffanie P. Perea</td></tr>
+              <tr><td class="label">Age:</td><td>20</td></tr>
+              <tr><td class="label">Date of Birth:</td><td>November 23, 2005</td></tr>
+              <tr><td class="label">Gender:</td><td>Female</td></tr>
+              <tr><td class="label">Address:</td><td>Banadero, Tanauan City</td></tr>
+              <tr><td class="label">Religion:</td><td>Catholic</td></tr>
+              <tr><td class="label">Citizenship:</td><td>Filipino</td></tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-5 mb-4">
+          <div class="profile-card">
+            <h5>Contact:</h5>
+            <table class="profile-table">
+              <tr><td class="label">Phone No.:</td><td>0951-171-4329</td></tr>
+              <tr><td class="label">Email:</td><td>pcyrlitiffanie@gmail.com</td></tr>
+              <tr><td class="label">Instagram:</td><td>tipani_freya</td></tr>
+              <tr><td class="label">Facebook:</td><td>Tiffanie Perea</td></tr>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="projects-section" id="project">
+    <div class="container">
+      <h2 class="section-title">Project Features</h2>
+      <div class="row justify-content-center">
+
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="project-card">
+            <img src="others/nbi.png" alt="NBI Forms"/>
+            <div class="card-body">
+              <p class="card-title">NBI Forms</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="project-card">
+            <img src="others/game.png" alt="Game Development"/>
+            <div class="card-body">
+              <p class="card-title">Game Development</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 mb-4">
+          <div class="project-card">
+            <img src="others/hotel.png" alt="Hotel Booking & Management System"/>
+            <div class="card-body">
+              <p class="card-title">Hotel Booking &amp; Management System</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech Stack Row -->
+      <div class="tech-stack-row">
+        <div class="tech-tags-box">
+          <span class="tech-tag">Python</span>
+          <span class="tech-tag">HTML</span>
+          <span class="tech-tag">CSS</span>
+          <span class="tech-tag">Script</span>
+          <span class="tech-tag">PHP</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="hobbies-section" id="hobbies">
+    <div class="container">
+      <h2 class="section-title">Hobbies</h2>
+      <div class="row justify-content-center">
+
+        <div class="col-6 col-sm-3 mb-4">
+          <div class="hobby-card">
+            <div class="hobby-img-wrap">
+              <img src="others/reading.jpg" alt="Reading"/>
+            </div>
+            <p class="hobby-label">Reading</p>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3 mb-4">
+          <div class="hobby-card">
+            <div class="hobby-img-wrap">
+              <img src="others/swimming.jpg" alt="Swimming"/>
+            </div>
+            <p class="hobby-label">Swimming</p>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3 mb-4">
+          <div class="hobby-card">
+            <div class="hobby-img-wrap">
+              <img src="others/hiking.jpg" alt="Hiking"/>
+            </div>
+            <p class="hobby-label">Hiking</p>
+          </div>
+        </div>
+
+        <div class="col-6 col-sm-3 mb-4">
+          <div class="hobby-card">
+            <div class="hobby-img-wrap">
+              <img src="others/riding.jpg" alt="Riding"/>
+            </div>
+            <p class="hobby-label">Riding</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p class="mb-0">Cyril Tiffanie P. Perea - Personal Portfolio</p>
+  </footer>
+
+</body>
+</html>
