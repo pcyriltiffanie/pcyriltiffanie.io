@@ -25,13 +25,13 @@
     }
 
     .site-navbar {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       z-index: 10;
       padding: 18px 40px;
-      display: fixed;
+      display: flex;
       align-items: center;
       justify-content: space-between;
       background: rgba(255, 255, 255, 0.04);
@@ -126,6 +126,10 @@
       background: var(--forest);
       border-radius: 8px;
       height: 100%;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-4px);
     }
 
     .profile-card h5 {
