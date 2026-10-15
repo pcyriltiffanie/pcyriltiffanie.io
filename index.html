@@ -122,6 +122,17 @@
     .hobby-img-wrap { width: 90px; height: 90px; border: 3px solid var(--cream-dark); }
     .hobby-name { font-size: 0.9rem; margin-bottom: 6px; }
 
+    .bento-section { padding: 80px 0; background: var(--cream); }
+    .bento-card { max-width: 460px; background: var(--white); border: 1px solid var(--cream-dark); box-shadow: 0 6px 24px rgba(30,58,47,0.08); }
+    .bento-img-wrap { height: 210px; background: linear-gradient(135deg, var(--forest-mid), var(--forest)); }
+    .bento-body { padding: 20px 22px 24px; }
+    .bento-tags { gap: 8px; margin-bottom: 14px; }
+    .bento-tag { font-size: 0.75rem; background: var(--cream); border: 1px solid var(--cream-dark); padding: 3px 12px; color: var(--ink); }
+    .bento-title { font-size: 1.25rem; margin-bottom: 8px; }
+    .bento-desc { font-size: 0.9rem; line-height: 1.7; color: #444; margin-bottom: 20px; }
+    .bento-btn { background: var(--forest); color: var(--white); font-size: 0.88rem; padding: 10px 22px; border: 0; transition: background 0.2s, transform 0.2s; }
+    .bento-btn:hover { background: var(--forest-mid); color: var(--white); transform: translateY(-2px); }
+
     .site-footer { background: var(--forest); padding: 32px 40px; }
     .footer-name { font-size: 1rem; color: var(--white); }
 
@@ -137,7 +148,7 @@
 
   <nav class="custom-navbar navbar navbar-expand-md fixed-top px-5">
     <a class="navbar-brand d-flex align-items-center p-0">
-      <img src="others/logo.png" alt="Logo" class="navbar-logo rounded-circle object-fit-cover"/>
+      <img src="others/CT.png" alt="Logo" class="navbar-logo rounded-circle object-fit-cover"/>
       <span class="navbar-brand-name font-display fw-semibold">Tiffanie Perea</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -148,10 +159,9 @@
       <ul class="navbar-nav">
         <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="#home">Home</a></li>
         <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="#works">Works</a></li>
+        <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="#project">Works</a></li>
         <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="#hobbies">Hobbies</a></li>
-        <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="bento.html">Projects</a></li>
-
+        <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="#projects">Projects</a></li>
       </ul>
     </div>
   </nav>
@@ -413,6 +423,29 @@
             </div>
             <div class="hobby-name fw-semibold text-dark">Riding</div>
           </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bento-section" id="projects">
+    <div class="container">
+      <h2 class="section-title font-display fw-bold">Projects</h2>
+      <p class="section-subtitle">A collection of things I've designed and built, showcasing my creativity, skills, and passion for web development.</p>
+
+      <div class="bento-card rounded-2 overflow-hidden mt-5">
+        <div class="bento-img-wrap">
+          <img src="others/ps5_project.png" alt="WebDev Bento Project" class="w-100 h-100 object-fit-cover d-block"/>
+        </div>
+        <div class="bento-body">
+          <div class="bento-tags d-flex flex-wrap">
+            <span class="bento-tag rounded-pill">Bootstrap 5</span>
+            <span class="bento-tag rounded-pill">HTML</span>
+            <span class="bento-tag rounded-pill">CSS</span>
+            <span class="bento-tag rounded-pill">Bento Grid</span>
+          </div>
+          <h3 class="bento-title font-display fw-semibold">Bento Project</h3>
+          <p class="bento-desc">A bento-style showcase of the PlayStation 5 and its gear, from the console and DualSense controller to the Pulse 3D headset, game drive, and game library, built to adapt to desktop, tablet, and mobile.</p>          <a href="https://pcyriltiffanie.github.io/WebDev/" target="_blank" rel="noopener noreferrer" class="bento-btn btn rounded-1 fw-medium">View Project &rarr;</a>
         </div>
       </div>
     </div>
