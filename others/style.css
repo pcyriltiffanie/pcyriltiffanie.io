@@ -1,5 +1,4 @@
 :root {
-  /* Colors */
   --forest: #1e3a2f;
   --forest-mid: #2d5240;
   --cream: #f7f4ef;
@@ -9,7 +8,6 @@
   --white: #ffffff;
   --card-border: rgba(255, 255, 255, 0.12);
 
-  /* Bootstrap overrides */
   --bs-body-font-family: 'Inter', sans-serif;
   --bs-body-bg: var(--cream);
   --bs-body-color: var(--ink);
