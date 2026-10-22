@@ -126,17 +126,32 @@
     .site-footer { background: var(--forest); padding: 32px 40px; }
     .footer-name { font-size: 1rem; color: var(--white); }
 
-    @media (max-width: 768px) {
-      .custom-navbar { padding-left: 20px; padding-right: 20px; }
+    /* Para hindi matakpan ng fixed navbar ang mga section heading kapag nag-click sa nav link */
+    section[id] { scroll-margin-top: 70px; }
+
+    /* Kitang-kita na hamburger button sa dark na navbar */
+    .custom-navbar .navbar-toggler { border-color: rgba(247,244,239,0.45); padding: 6px 10px; }
+    .custom-navbar .navbar-toggler:focus { box-shadow: 0 0 0 0.2rem rgba(247,244,239,0.25); }
+
+    @media (max-width: 767.98px) {
+      .custom-navbar .navbar-collapse { padding: 10px 0 6px; }
+      .custom-navbar .nav-link { margin: 0; padding: 12px 4px; border-top: 1px solid rgba(247,244,239,0.12); }
+
       .navbar-brand-name { display: none; }
+
+      .hero-section { padding-top: 100px; }
       .hero-stat-row { justify-content: center; }
-      .hero-photo-wrap { display: none; }
+
+      /* Ibalik ang profile picture sa mobile, mas maliit para kasya sa screen */
+      .hero-photo-wrap { width: 250px; height: 310px; margin-top: 48px; }
+      .hero-photo-frame { width: 220px; height: 280px; border-radius: 110px 110px 90px 90px; }
+      .hero-photo-badge { bottom: 16px; padding: 10px 14px; }
     }
   </style>
 </head>
 <body>
 
-  <nav class="custom-navbar navbar navbar-expand-md fixed-top px-5">
+  <nav class="custom-navbar navbar navbar-expand-md fixed-top px-3 px-md-5" data-bs-theme="dark">
     <a class="navbar-brand d-flex align-items-center p-0">
       <img src="others/CT.png" alt="Logo" class="navbar-logo rounded-circle object-fit-cover"/>
       <span class="navbar-brand-name font-display fw-semibold">Tiffanie Perea</span>
@@ -151,7 +166,9 @@
         <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="#about">About</a></li>
         <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="#project">Works</a></li>
         <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="#hobbies">Hobbies</a></li>
-        <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="https://pcyriltiffanie.github.io/WebDev/index.html" target="_blank" rel="noopener noreferrer">Projects</a></li>    </div>
+        <li class="nav-item"><a class="nav-link text-uppercase fw-medium position-relative" href="https://pcyriltiffanie.github.io/WebDev/index.html" target="_blank" rel="noopener noreferrer">Projects</a></li>
+      </ul>
+    </div>
   </nav>
 
   <section class="hero-section d-flex align-items-center position-relative overflow-hidden" id="home">
@@ -182,7 +199,7 @@
           </div>
         </div>
 
-        <div class="col-md-6 d-none d-md-flex justify-content-center">
+        <div class="col-md-6 d-flex justify-content-center">
           <div class="hero-photo-wrap position-relative mx-auto">
             <div class="hero-photo-frame position-relative overflow-hidden mx-auto">
               <img src="others/bg.png" alt="Tiffanie" class="w-100 h-100 object-fit-cover"/>
@@ -424,6 +441,18 @@
       </div>
     </div>
   </footer>
-  
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Isara ang mobile menu pagkatapos mag-click ng nav link
+    document.querySelectorAll('#navbarNav .nav-link').forEach(function (link) {
+      link.addEventListener('click', function () {
+        var menu = document.getElementById('navbarNav');
+        if (menu.classList.contains('show')) {
+          bootstrap.Collapse.getOrCreateInstance(menu).hide();
+        }
+      });
+    });
+  </script>
 </body>
 </html>
